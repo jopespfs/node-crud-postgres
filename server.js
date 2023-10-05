@@ -3,12 +3,21 @@ const fastify = Fastify({
   logger: true,
 });
 
-fastify.get("/", function handler(request, reply) {
+const HOST = "localhost"; //127.0.0.1
+const PORT = 5000;
+
+fastify.get("/", function handler(request, response) {
   return { hello: "world" };
 });
 
-const HOST = "localhost"; //127.0.0.1
-const PORT = 5000;
+fastify.get("/produtos", (request, response) => {
+  return { rodando: "srevidor produtos"}
+})
+
+fastify.get("/produto/:id", (request, response) =>{
+  return {rodando: "servidor produto/:id"}
+})
+
 
 fastify
   .listen({
