@@ -1,4 +1,7 @@
 import Fastify from "fastify";
+import '.db.js'
+
+
 const fastify = Fastify({
   logger: true,
 });
@@ -16,6 +19,10 @@ fastify.get("/produtos", (request, response) => {
 
 fastify.get("/produto/:id", (request, response) =>{
   return {rodando: "servidor produto/:id"}
+})
+
+fastify.post("/produto", (requestl, response) => {
+  return { rodando: "servidor /produto"}
 })
 
 

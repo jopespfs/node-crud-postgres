@@ -6,3 +6,6 @@ GET http://localhost:5000/produtos
 ###
 
 GET http://localhost:5000/produto/:id
+
+###
+POST  http://localhost:5000/produtos
